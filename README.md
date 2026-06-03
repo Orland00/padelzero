@@ -41,6 +41,15 @@ PadelZero replaces the scattered WhatsApp groups and paper scoresheets that most
   model-routing policy, and guardrails for assistants, WhatsApp tooling, coach
   notes, and security reviews.
 
+### Integration shell
+- Database-backed domain model: profiles, matches, leagues, tournaments, clubs,
+  courts, bookings, notifications, CRM notes, and audit surfaces.
+- External API boundaries for Supabase, Stripe, Meta/WhatsApp, Web Push, maps,
+  email, and AI providers.
+- Edge-function layer for privileged operations, webhooks, transactional email,
+  checkout, match finalization, push delivery, and messaging agents.
+- Security gates for env templates, migration risk, runbooks, and agent safety.
+
 ## Tech stack
 
 | Layer | Technology |
@@ -68,7 +77,11 @@ supabase/
   functions/          Supabase Edge Functions
 Test/                 unit, frontend, security, e2e, and stress tests
 scripts/              build, smoke-test, and security-check tooling
+docs/                 public architecture + AI operations shell
 ```
+
+See [`docs/architecture.md`](./docs/architecture.md) for the sanitized database,
+API, edge-function, and integration map.
 
 ## Running locally
 

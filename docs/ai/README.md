@@ -11,6 +11,7 @@ present in this snapshot.
 - Club ops assistant: summarizes booking and occupancy patterns for operators.
 - WhatsApp agent shell: routes group messages into safe tool calls.
 - QA agents: generate and review tests for security, RLS, and tournament logic.
+- Agent topology: `docs/ai/agent-topology.md`.
 
 ## Guardrails
 

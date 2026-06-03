@@ -36,6 +36,11 @@ PadelZero replaces the scattered WhatsApp groups and paper scoresheets that most
 ### Platform
 - Club directory and court booking sheets, coach profiles, sponsor placements, ELO calculator, CSV export, i18n (ES/EN), full PWA support
 
+### AI ops
+- Public AI operations shell under `docs/ai/`: prompt registry, eval cases,
+  model-routing policy, and guardrails for assistants, WhatsApp tooling, coach
+  notes, and security reviews.
+
 ## Tech stack
 
 | Layer | Technology |

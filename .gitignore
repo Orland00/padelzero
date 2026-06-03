@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# env / secrets
+.env
+.env.*
+!.env.example
+!.env.tpl
+.dev.vars
+.dev.vars.*
+
+# build output
+dist/
+build/
+.wrangler/
+.vite/
+
+# test artifacts
+coverage/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# editor / OS
+.DS_Store
+*.log
+.idea/
+.vscode/
+
+# local agent / tooling state
+.claude/
+.remember/
+.agents/
+.superpowers/

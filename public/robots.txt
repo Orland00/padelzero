@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /mcp
+Disallow: /torneo-proleague-admin
+
+Sitemap: https://padelzero.win/sitemap.xml

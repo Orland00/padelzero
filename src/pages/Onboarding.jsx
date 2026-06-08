@@ -44,10 +44,11 @@ export default function Onboarding() {
   const validate = () => {
     const e = {}
     if (!displayName.trim()) e.displayName = 'Ingresa tu nombre'
+    const normalizedUsername = username.trim().replace(/^@+/, '').replace(/\s+/g, '').toLowerCase()
     if (!username.trim()) e.username = 'Ingresa un @usuario'
-    else if (!username.startsWith('@')) e.username = 'Debe empezar con @'
-    else if (username.length < 3) e.username = 'Muy corto, mínimo 3 caracteres'
-    else if (!/^@[a-zA-Z0-9_.]+$/.test(username)) e.username = 'Solo letras, números, puntos y guion bajo'
+    else if (!username.trim().startsWith('@')) e.username = 'Debe empezar con @'
+    else if (normalizedUsername.length < 3) e.username = 'Muy corto, mínimo 3 caracteres'
+    else if (!/^[a-z0-9_.]+$/.test(normalizedUsername)) e.username = 'Solo letras, números, puntos y guion bajo'
     if (!city.trim()) e.city = 'Ingresa tu ciudad'
     if (age && (isNaN(age) || age < 5 || age > 99)) e.age = 'Edad no válida'
     return e
@@ -59,7 +60,7 @@ export default function Onboarding() {
     setErrors({})
 
     const { normalizeCity, normalizeCountry } = await import('@/lib/utils')
-    const cleanUsername = username.trim().replace(/^@+/, '').toLowerCase()
+    const cleanUsername = username.trim().replace(/^@+/, '').replace(/\s+/g, '').toLowerCase()
     const { error } = await updateProfile({
       display_name: displayName.trim(),
       username: cleanUsername,

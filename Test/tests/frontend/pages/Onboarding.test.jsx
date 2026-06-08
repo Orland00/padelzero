@@ -60,7 +60,7 @@ describe('Onboarding Page', () => {
     fireEvent.change(screen.getByPlaceholderText(/@tuusuario/i), { target: { value: '@realuser' } });
     // Country and City are selects
     fireEvent.change(screen.getAllByRole('combobox')[0], { target: { value: 'México' } });
-    fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'Demo City' } });
+    fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'Cancún' } });
     
     fireEvent.click(screen.getByRole('checkbox'));
     fireEvent.click(screen.getByText(/empezar a jugar/i));
@@ -69,7 +69,7 @@ describe('Onboarding Page', () => {
       expect(updateProfile).toHaveBeenCalledWith(expect.objectContaining({
         display_name: 'Real Name',
         username: 'realuser',
-        city: 'Demo City',
+        city: 'Cancún',
         country: 'México'
       }));
     });
@@ -86,7 +86,7 @@ describe('Onboarding Page', () => {
     
     fireEvent.change(screen.getByPlaceholderText(/tu nombre/i), { target: { value: 'Test User' } });
     fireEvent.change(screen.getByPlaceholderText(/@tuusuario/i), { target: { value: '@taken' } });
-    fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'Demo City' } });
+    fireEvent.change(screen.getAllByRole('combobox')[1], { target: { value: 'Cancún' } });
     
     fireEvent.click(screen.getByRole('checkbox'));
     fireEvent.click(screen.getByText(/empezar a jugar/i));

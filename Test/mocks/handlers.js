@@ -1,6 +1,13 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
+  http.get('https://ipapi.co/json/', () => {
+    return HttpResponse.json({
+      city: 'Cancún',
+      country_name: 'México',
+    });
+  }),
+
   // Auth handlers
   http.get('*/auth/v1/user', () => {
     return HttpResponse.json(null, { status: 401 });

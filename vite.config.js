@@ -90,11 +90,19 @@ export default defineConfig({
     // every deploy. Kenji §1.1 → projected entry chunk ~80 KB gz (vs 165 KB today).
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react':    ['react', 'react-dom', 'react-router-dom'],
-          'vendor-supabase': ['@supabase/supabase-js'],
-          'vendor-motion':   ['framer-motion'],
-          'vendor-state':    ['zustand'],
+        manualChunks(id) {
+          if (id.includes('/node_modules/react') || id.includes('/node_modules/react-dom') || id.includes('/node_modules/react-router-dom')) {
+            return 'vendor-react'
+          }
+          if (id.includes('/node_modules/@supabase/supabase-js')) {
+            return 'vendor-supabase'
+          }
+          if (id.includes('/node_modules/framer-motion')) {
+            return 'vendor-motion'
+          }
+          if (id.includes('/node_modules/zustand')) {
+            return 'vendor-state'
+          }
         },
       },
     },

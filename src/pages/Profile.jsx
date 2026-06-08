@@ -225,7 +225,7 @@ export default function Profile() {
         return
       }
 
-      const username = (editUsername || '').trim().replace(/^@/, '').toLowerCase()
+      const username = (editUsername || '').trim().replace(/^@+/, '').replace(/\s+/g, '').toLowerCase()
       if (!username) {
         showToast({ type: 'warning', message: '@usuario requerido', duration: 2000 })
         return

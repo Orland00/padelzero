@@ -60,7 +60,7 @@ describe('offline queue author filter', () => {
 // lowercase. Both entry points must produce the same DB value so that future
 // case-insensitive lookups converge.
 function normalizeUsername(raw) {
-  return (raw || '').trim().replace(/^@+/, '').toLowerCase()
+  return (raw || '').trim().replace(/^@+/, '').replace(/\s+/g, '').toLowerCase()
 }
 
 describe('username normalization', () => {

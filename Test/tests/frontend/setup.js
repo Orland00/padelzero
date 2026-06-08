@@ -2,6 +2,9 @@ import '@testing-library/jest-dom'
 import { beforeAll, afterEach, afterAll, vi } from 'vitest'
 import { server } from '../../mocks/server'
 
+vi.stubEnv('VITE_SUPABASE_URL', 'https://example.supabase.co')
+vi.stubEnv('VITE_SUPABASE_ANON_KEY', 'test-anon-key')
+
 // Mock localStorage
 if (typeof window !== 'undefined') {
   const localStorageMock = (() => {

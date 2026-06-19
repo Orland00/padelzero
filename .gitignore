@@ -34,3 +34,6 @@ playwright/.cache/
 .remember/
 .agents/
 .superpowers/
+
+# Internal ops template (1Password paths) — keep out of public snapshot
+.env.tpl

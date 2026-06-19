@@ -1,3 +1,9 @@
+> # ⚠️ NO ES PRODUCCIÓN — NO USAR NUNCA
+>
+> **Este repositorio es un _snapshot público sanitizado_ con fines de portafolio/demostración.**
+> No es el código canónico, no se despliega, no recibe mantenimiento y **no debe usarse, clonarse ni desplegarse** como base de nada.
+> El desarrollo real vive en un repositorio privado separado. Sin secretos, sin credenciales, sin datos reales.
+
 # PadelZero
 
 **A hyperlocal padel community platform.** Spanish-first, mobile-first, offline-ready PWA for recording matches, tracking ELO, and running leagues and tournaments.
